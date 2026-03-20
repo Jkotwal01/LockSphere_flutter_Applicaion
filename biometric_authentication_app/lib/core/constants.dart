@@ -3,8 +3,9 @@ class AppConstants {
   static const String apiBaseUrl = 'https://api.yourdomain.com/v1';
   // MQTT URLs
   static const String mqttBrokerUrl = 'mqtt.yourdomain.com';
-  static const int mqttBrokerPort = 8883; // Secure MQTT
-  
+  static const int mqttPort = 8883; // Secure MQTT
+  static const String mqttTopicStatus = 'door/{deviceId}/status';
+  static const String mqttTopicCommand = 'door/{deviceId}/command';
   // BLE UUIDs
   static const String bleServiceUUID = "12345678-1234-1234-1234-1234567890ab";
   static const String bleCharacteristicUUID = "abcd1234-5678-1234-5678-abcdef123456";
@@ -25,5 +26,6 @@ class AppConstants {
   static const String addUserRoute = '/add-user';
   static const String logsRoute = '/logs';
   static const String notificationsRoute = '/notifications';
+  static const String deviceSettingsRoute = '/device-settings';
   static const String settingsRoute = '/settings';
 }

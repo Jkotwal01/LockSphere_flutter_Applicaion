@@ -5,17 +5,28 @@ import 'core/router.dart';
 import 'providers/auth_provider.dart';
 import 'providers/door_provider.dart';
 import 'providers/access_provider.dart';
+import 'providers/logs_provider.dart';
+import 'providers/notifications_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Firebase initialization, local storage retrieval, etc. will go here later
-  
+
+  // Initialize Firebase!
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => DoorProvider()),
         ChangeNotifierProvider(create: (_) => AccessProvider()),
+        ChangeNotifierProvider(create: (_) => LogsProvider()),
+        ChangeNotifierProvider(create: (_) => NotificationsProvider()),
       ],
       child: const SentinelApp(),
     ),

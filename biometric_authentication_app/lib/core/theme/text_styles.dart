@@ -25,6 +25,13 @@ class AppTextStyles {
         letterSpacing: -0.5,
       );
 
+  static TextStyle get titleMd => GoogleFonts.manrope(
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
+        color: AppTheme.onSurface,
+        letterSpacing: 0.1,
+      );
+
   static TextStyle get titleSm => GoogleFonts.manrope(
         fontSize: 14,
         fontWeight: FontWeight.w700,
